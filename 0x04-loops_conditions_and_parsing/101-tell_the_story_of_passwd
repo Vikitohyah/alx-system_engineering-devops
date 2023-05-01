@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 # This script tells a story based on the contents of the `/etc/passwd` file
 myfile="/etc/passwd"
-a1=""
-a2=""
-a3=""
+f1=""
+f2=""
+f3=""
 while IFS= read -r line
 do
-    a1="$(echo "$line" | cut -d":" -a1)"
-    a2="$(echo "$line" | cut -d":" -a4)"
-    a3="$(echo "$line" | cut -d":" -a6)"
-    a4="$(echo "$line" | cut -d":" -a7)"
-    a5="$(echo "$line" | cut -d":" -a3)"
-    a6="$(echo "$line" | cut -d":" -a2)"
-    a7="$(echo "$line" | cut -d":" -a5)"
-    echo "The user ${a1} is part of the ${a2} gang, lives in ${a3} and rides ${a4}. ${a5}'s place is protected by the passcode ${a6}, more info about the user here: ${a7}"
+    f1="$(echo "$line" | cut -d":" -f1)"
+    f2="$(echo "$line" | cut -d":" -f4)"
+    f3="$(echo "$line" | cut -d":" -f6)"
+    f4="$(echo "$line" | cut -d":" -f7)"
+    f5="$(echo "$line" | cut -d":" -f3)"
+    f6="$(echo "$line" | cut -d":" -f2)"
+    f7="$(echo "$line" | cut -d":" -f5)"
+    echo "The user ${f1} is part of the ${f2} gang, lives in ${f3} and rides ${f4}. ${f5}'s place is protected by the passcode ${f6}, more info about the user here: ${f7}"
 done < "$myfile"
